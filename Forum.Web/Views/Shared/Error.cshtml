@@ -1,0 +1,30 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@using Resources;
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+
+<section class="container-fluid wrapper">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <div class="div-error errorFull">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <p>
+                    @if (ViewData["ErrorMessage"] != null)
+                    {
+                        @ViewData["ErrorMessage"]
+                    }
+                    else
+                    {
+                        @UIResources.RequestErrorMessage
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
